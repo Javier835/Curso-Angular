@@ -1,0 +1,128 @@
+<div class="position-relative text-center mb-5 bg-dark text-white pt-5 d-flex justify-content-center align-items-center" 
+     style="min-height: 350px; overflow: hidden;">
+  
+  <!-- Capa de fondo con imagen, opacidad y blur -->
+  <div style="
+    background-image: url('assets/banner3.png');
+    background-size: cover;
+    background-position: center;
+    filter: blur(4px);
+    opacity: 0.5;
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 0;">
+  </div>
+
+  <!-- Contenido (texto) sobre la imagen -->
+  <div style="position: relative; z-index: 1;">
+    <h1 class="display-4 fw-bold text-white" style="text-shadow: 2px 2px 6px rgba(0,0,0,0.8);">
+      Práctica #3:  Interpolación
+    </h1>
+    <p class="lead text-white" style="text-shadow: 1px 1px 4px rgba(0,0,0,0.7);">
+      Aprende a usar la interpolación.
+    </p>
+  </div>
+</div>
+
+
+
+
+<div class="container-fluid">
+     
+    <div class="row">
+        <div class="col-md-4 mb-4">
+                <div class="card card-hover text-secundary h-100 p-5 rounded-4 shadow border-0 d-flex flex-column justify-content-center">
+                    <h5 class="text-primary">[Requerido]</h5>
+                    <h2 class="text-left ">1) Intrerpolación Básica</h2>
+                    <p><strong>Objetivo: </strong>Mostrar un mensaje de bienvenida utilizando interpolación.</p>
+                    <ul>
+                        <li>Mostrar el valor de esta variable en pantalla</li>
+                        <img class="img-fluid" src="assets/primerejerciciointerpolacion.png" alt="">
+                    </ul>
+                    <div class="implementacion border border-primary rounded-4 p-4 shadow-sm bg-light-subtle">
+                        <p><strong>Implementación de la practica:</strong></p>
+                        {{wlcomeMessage}}
+                    </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+                <div class="card card-hover text-secundary h-100 p-5 rounded-4 shadow border-0 d-flex flex-column justify-content-center">
+                    <h5 class="text-primary">[Requerido]</h5>
+                    <h2 class="mb-4 text-left ">2) Interpolación con prop. de Clase</h2>
+                    <p><strong>Objetivo: </strong>Mostrar el nombre y la edad de una persona utilizando interpolación.</p>
+                    <ul>
+                        <li>Mostrar el valor de esta variable en pantalla</li>
+                        <img class="img-fluid" src="assets/segundoejerciciointerpolacion.png" alt="">
+                    </ul>
+                    <div class="implementacion border border-primary rounded-4 p-4 shadow-sm bg-light-subtle">
+                        <p><strong>Implementación de la practica:</strong></p>
+                        <p>El nombre de la persona es: <strong>{{person.name}}</strong>  y su edad es: <strong>{{person.age}}.</strong></p>                        
+                    </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+                <div class="card card-hover text-secundary h-100 p-5 rounded-4 shadow border-0 d-flex flex-column justify-content-center">
+                    <h5 class="text-primary">[Requerido]</h5>
+                    <h2 class="mb-4 text-left ">3) Interpolación con Expresiones</h2>
+                    
+                    <ul>
+                        <li><strong>Objetivo: </strong>Mostrar la resta de <strong>num1 = 12 y num2 = 20</strong>, utilizando interpolación y expresiones, agregarle texto a la respuesta que vas a mostrar en pantalla.</li>
+                        <li><strong>Objetivo: </strong>Mostrar la multiplicación de <strong>num1 = 8 y num2 = 4</strong>, utilizando interpolación y expresiones, agregarle texto a la respuesta que vas a mostrar en pantalla.</li>
+                        
+                    </ul>
+                    <div class="implementacion border border-primary rounded-4 p-4 shadow-sm bg-light-subtle">
+                        <p><strong>Implementación de la practica:</strong></p>
+                        <p>La resta de: <strong>{{num1}}</strong> menos <strong>{{num2}}</strong> es: <strong>{{resta()}}.</strong></p>                        
+                    </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+                <div class="card card-hover text-secundary h-100 p-5 rounded-4 shadow border-0 d-flex flex-column justify-content-center">
+                    <h5 class="text-danger">[Opcional]</h5>
+                    <h2 class="mb-4 text-left ">4) Interpolación con Métodos</h2>
+                    
+                    <ul>
+                        <li><strong>Objetivo: </strong>Utilizar un método para calcular y mostrar el resultado de una operación. <br>El radius = 5</li>
+                        <img class="img-fluid" src="assets/cuartoejerciciointerpolacion.png" alt="">       
+                        <p>Deben de usar el Math.PI y el Math.pow</p>                 
+                    </ul>
+                    <div class="implementacion border border-primary rounded-4 p-4 shadow-sm bg-light-subtle">
+                        <p><strong>Implementación de la practica:</strong></p>
+                        <p>El área del circulo es <strong>{{calculateArea(5)}}.</strong></p>                        
+                    </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+                <div class="card card-hover text-secundary h-100 p-5 rounded-4 shadow border-0 d-flex flex-column justify-content-center">
+                    <h5 class="text-danger">[Opcional]</h5>
+                    <h2 class="mb-4 text-left ">5) Interpolación con Condiciones</h2>
+                    
+                    <ul>
+                        <li><strong>Objetivo: </strong>Mostrar un mensaje condicional basado en el valor de una propiedad.</li>
+                        <img class="img-fluid" src="assets/quintoejerciciointerpolacion.png" alt="">                     
+                    </ul>
+
+                    <div class="implementacion border border-primary rounded-4 p-4 shadow-sm bg-light-subtle">
+                    <p><strong>Implementación de la práctica:</strong></p>
+                    <p>{{ isLoggedIn ? 'Bienvenido de nuevo.' : 'Por favor, inicia sesión.' }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+                <div class="card card-hover text-secundary h-100 p-5 rounded-4 shadow border-0 d-flex flex-column justify-content-center">
+                    <h5 class="text-danger">[Opcional]</h5>
+                    <h2 class="mb-4 text-left ">6) Interpolación con Pipe</h2>
+                    
+                    <ul>
+                        <li><strong>Objetivo: </strong>Formatear una fecha utilizando el pipe date.</li>
+                        <img class="img-fluid" src="assets/sextoejerciciointerpolacion.png" alt="">                     
+                    </ul>
+
+                    <div class="implementacion border border-primary rounded-4 p-4 shadow-sm bg-light-subtle">
+                    <p><strong>Implementación de la práctica:</strong></p>
+                    <p>La fecha es: <strong>{{ currentDate | date }}.</strong></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+<div class="card card-hover text-secundary h-100 p-5 rounded-4 shadow border-0 d-flex flex-column justify-content-center">
+  <img src="assets/componente.png" class="card-img-top p-5" alt="Imagen de componente">
+  <div class="card-body">
+    <h5 class="card-title">Tercer componente</h5>
+    <p class="card-text">Este es un componente de prueba el cual corresponde a la practica #2 del curso de Angular.</p>
+    <a href="#" (click)="mostrarAlerta()" class="btn btn-primary">Mostrar Mensaje</a>
+    <div *ngIf="mostrar" class="alert alert-success mt-3" role="alert">
+      ¡Hola soy el tercer componente!
+    </div>
+  </div>
+</div>
+
+
+

@@ -1,17 +1,17 @@
 import { Component } from '@angular/core';
 import { RouterModule, RouterOutlet } from '@angular/router';
-import { routes } from '../app/helpers/routes';
 import { CommonModule } from '@angular/common';
+import { cards } from '../../helpers/cards';
+
+
 
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-inicio',
   imports: [CommonModule,RouterModule],
-  templateUrl: './app.html',
-  styleUrl: './app.css'
+  templateUrl: './inicio.html',
+  styleUrl: './inicio.css'
 })
-export class App {
-
-  routes: Array<any> = routes
-
+export class Inicio {
+  cards: Array<any> = cards
 }

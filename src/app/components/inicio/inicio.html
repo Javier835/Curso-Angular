@@ -1,0 +1,51 @@
+<div class="position-relative text-center mb-5 bg-dark text-white pt-5 d-flex justify-content-center align-items-center" 
+     style="min-height: 350px; overflow: hidden;">
+  
+  <!-- Capa de fondo con imagen, opacidad y blur -->
+  <div style="
+    background-image: url('assets/banner2.png');
+    background-size: cover;
+    background-position: center;
+    filter: blur(4px);
+    opacity: 0.5;
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 0;">
+  </div>
+
+  <!-- Contenido (texto) sobre la imagen -->
+  <div style="position: relative; z-index: 1;">
+    <h1 class="display-4 fw-bold text-white" style="text-shadow: 2px 2px 6px rgba(0,0,0,0.8);">
+      PRACTICAS DE ANGULAR
+    </h1>
+    <p class="lead text-white" style="text-shadow: 1px 1px 4px rgba(0,0,0,0.7);">
+      En este sitio veremos las diferentes practicas de Angular.
+    </p>
+  </div>
+</div>
+
+
+
+<div class="container pb-5">
+  <div class="row g-4 justify-content-center">
+
+    <div *ngFor="let card of cards" class="col-12 col-md-6 col-lg-4">
+      <div class="card card-hover text-white h-100 p-4 rounded-4 shadow border-0 d-flex flex-column justify-content-between {{card.color}}">
+
+        <!-- Ícono decorativo -->
+        <div class="bg-white bg-opacity-25 rounded-circle p-3 mx-auto mb-3" style="width: 70px; height: 70px; display: flex; align-items: center; justify-content: center;">
+          <i class="bi {{card.icon}} fs-2"></i>
+        </div>
+
+        <!-- Título y descripción -->
+        <h5 class="fw-bold text-center">{{card.title}}</h5>
+        <p class="text-white-50 text-center">{{card.description}}</p>
+
+        <!-- Botón -->
+        <a [routerLink]="[card.path]" class="btn btn-light rounded-pill w-100 mt-3">Ver implementación</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
