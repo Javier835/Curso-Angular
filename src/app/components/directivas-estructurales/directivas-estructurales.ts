@@ -1,5 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { Menu } from '../menu/menu';
+import { Footer } from '../footer/footer';
 
 @Component({
   selector: 'app-directivas-estructurales',

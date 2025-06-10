@@ -6,6 +6,8 @@ import { Counter } from './counter/counter';
 import { CommonModule } from '@angular/common';
 import { PrimeraPalabraPipe } from '../../pipe/primera-palabra-pipe';
 import { ReverseTextPipe } from '../../pipe/reverse-text-pipe';
+import { Menu } from '../menu/menu';
+import { Footer } from '../footer/footer';
 
 
 @Component({

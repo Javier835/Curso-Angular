@@ -1,6 +1,8 @@
 import { Component,OnInit } from '@angular/core';
 // import { PerritosService } from '../../services/perritos.service';
 import { CommonModule } from '@angular/common';
+import { Menu } from '../menu/menu';
+import { Footer } from '../footer/footer';
 
 
 @Component({
