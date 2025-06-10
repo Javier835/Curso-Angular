@@ -3,6 +3,8 @@ import { Component } from '@angular/core';
 import { Componente1 } from './componente1/componente1';
 import { Componente2 } from './componente2/componente2';
 import { Componente3 } from './componente3/componente3';
+import { Menu } from '../menu/menu';
+import { Footer } from '../footer/footer';
 
 @Component({
   selector: 'app-componentes',

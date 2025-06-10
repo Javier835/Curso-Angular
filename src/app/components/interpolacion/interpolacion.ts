@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { TypeofExpression } from '@angular/compiler';
 import { Component } from '@angular/core';
+import { Menu } from '../menu/menu';
+import { Footer } from '../footer/footer';
 
 @Component({
   selector: 'app-interpolacion',
