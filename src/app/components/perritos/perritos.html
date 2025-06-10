@@ -32,4 +32,23 @@
 
 <button (click)="obtenerImagenPerrito()">Obtener otro perrito 🐶</button> -->
 
+<div class="container d-flex justify-content-center align-items-center my-5">
+  <div class="text-center p-3">
+    <h2 class="mb-2">¡Elije tu nueva mascota! 🐾</h2>
+
+    <div *ngIf="imagenPerrito" class="card card-hover text-secondary p-3 rounded-4 shadow border-0 d-flex flex-column justify-content-center align-items-center" style="width: 22rem;">
+      <img [src]="imagenPerrito" alt="Perrito aleatorio" class="card-img-top rounded img-fluid mb-3" />
+      <div class="card-body p-0">
+        <h5 class="card-title mb-2">{{ nombrePerrito }}</h5>
+        <p class="card-text mb-2">
+          <strong>Edad:</strong> {{ edadPerrito }} años<br />
+          <strong>Raza:</strong> {{ razaPerrito }}
+        </p>
+      </div>
+      <button class="btn btn-primary mt-2" (click)="obtenerImagenPerrito()">Mostrar otro perrito 🐶</button>
+    </div>
+  </div>
+</div>
+
+
 
