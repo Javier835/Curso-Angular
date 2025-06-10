@@ -1,0 +1,178 @@
+<div class="position-relative text-center mb-5 bg-dark text-white pt-5 d-flex justify-content-center align-items-center"
+    style="min-height: 350px; overflow: hidden;">
+
+    <!-- Capa de fondo con imagen, opacidad y blur -->
+    <div style="
+    background-image: url('assets/banner5.png');
+    background-size: cover;
+    background-position: center;
+    filter: blur(4px);
+    opacity: 0.5;
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 0;">
+    </div>
+
+    <!-- Contenido (texto) sobre la imagen -->
+    <div style="position: relative; z-index: 1;">
+        <h1 class="display-4 fw-bold text-white" style="text-shadow: 2px 2px 6px rgba(0,0,0,0.8);">
+            Práctica #5: Comunicación de componentes
+        </h1>
+        <p class="lead text-white" style="text-shadow: 1px 1px 4px rgba(0,0,0,0.7);">
+            Aprende como funciona la comunicación entre componentes.
+        </p>
+    </div>
+</div>
+
+
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-md-4 mb-4">
+            <div
+                class="card card-hover text-secundary h-100 p-5 rounded-4 shadow border-0 d-flex flex-column justify-content-center">
+                <h5 class="text-primary">[Requerido]</h5>
+                <h2 class="text-left ">1) Mostrar Mensaje</h2>
+                <p><strong>Objetivo: </strong>Crea un componente MessageComponent que reciba mediante
+                    <strong>Input()</strong> un mensaje y lo muestre en un párrafo.
+                </p>
+                <p><strong>Ejemplo de uso en el componente padre:</strong></p>
+                <p><strong>&lt;app-message [text]=&quot;Hola, bienvenido a
+                        Angular!&quot;&gt;&lt;/app-message&gt;</strong></p>
+                <div class="implementacion border border-primary rounded-4 p-4 shadow-sm bg-light-subtle">
+                    <p><strong>Implementación de la practica:</strong></p>
+                    <app-message [mensaje]="'Hola, bienvenido a Angular!'"></app-message>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div
+                class="card card-hover text-secundary h-100 p-5 rounded-4 shadow border-0 d-flex flex-column justify-content-center">
+                <h5 class="text-primary">[Requerido]</h5>
+                <h2 class="text-left ">2) Cambiar Color de Fondo</h2>
+                <p><strong>Objetivo: </strong>Crea un componente ColorBoxComponent que reciba mediante
+                    <strong>Input()</strong> un color y lo aplique como fondo de un cuadro <strong>(div).</strong>
+                </p>
+                <p><strong>Ejemplo de uso en el componente padre:</strong></p>
+                <p><strong>&lt;app-color-box [color]=&quot;lightblue&quot;&gt;&lt;/app-color-box&gt;</strong></p>
+                <div class="implementacion border border-primary rounded-4 p-4 shadow-sm bg-light-subtle">
+                    <p><strong>Implementación de la practica:</strong></p>
+                    <div class="botones d-flex justify-content-center align-items-center py-4">
+                        <a (click)="setColor('bg-primary')" class="btn btn-primary mx-3 text-white">Azul</a>
+                        <a (click)="setColor('bg-warning')" class="btn btn-warning mx-3 text-white">Amarillo</a>
+                        <a (click)="setColor('bg-success')" class="btn bg-success mx-3 text-white">Verde</a>
+                        <a (click)="setColor('bg-danger')" class="btn btn-danger mx-3 text-white">Rojo</a>
+                    </div>
+                    <app-color-box [color]="colorCaja"></app-color-box>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div
+                class="card card-hover text-secundary h-100 p-5 rounded-4 shadow border-0 d-flex flex-column justify-content-center">
+                <h5 class="text-primary">[Requerido]</h5>
+                <h2 class="text-left ">3) Botón de Alerta</h2>
+                <p><strong>Objetivo: </strong>Crea un componente AlertButtonComponent con un botón que, al hacer clic,
+                    emita un mensaje de alerta <strong>Output()</strong> al componente padre.</p>
+                <p><strong>Ejemplo de uso en el componente padre:</strong></p>
+                <p><strong>&lt;app-alert-button (alert)="showAlert($event)"&gt;&lt;/app-alert-button&gt;</strong></p>
+                <p>En el componente padre:</p>
+                <img class="img-fluid" style="width: 165px;" src="assets/tercerejerciciocomunicaciondecomponentes.png"
+                    alt=""> <br>
+                <div class="implementacion border border-primary rounded-4 p-4 shadow-sm bg-light-subtle">
+                    <p><strong>Implementación de la practica:</strong></p>
+                    <app-alert-button (alerta)="recibirAlerta($event)"></app-alert-button>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div
+                class="card card-hover text-secundary h-100 p-5 rounded-4 shadow border-0 d-flex flex-column justify-content-center">
+                <h5 class="text-primary">[Requerido]</h5>
+                <h2 class="text-left ">4) Contador</h2>
+                <p><strong>Objetivo: </strong>Crea un componente CounterComponent con dos botones: Incrementar y
+                    Decrementar. Cada uno debe emitir el valor actual del contador al componente padre mediante
+                    Output().</p>
+                <p><strong>Ejemplo de uso en el componente padre:</strong></p>
+                <img class="img-fluid" style="width: 400px;" src="assets/cuartoejerciciocomunicaciondecomponentes.png"
+                    alt=""> <br>
+                <div class="implementacion border border-primary rounded-4 p-4 shadow-sm bg-light-subtle">
+                    <p><strong>Implementación de la practica:</strong></p>
+
+                    <app-counter (countChanged)="updateCount($event)"></app-counter>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div
+                class="card card-hover text-secundary h-100 p-5 rounded-4 shadow border-0 d-flex flex-column justify-content-center">
+                <h5 class="text-primary">[Requerido]</h5>
+                <h2 class="text-left ">5) Convertir a Mayúsculas</h2>
+                <p><strong>Objetivo: </strong>Crea un pipe llamado uppercase que transforme cualquier texto recibido a mayúsculas.</p>
+                <img class="img-fluid" style="width: 300px;" src="assets/quintoejerciciocomunicaciondecomponentes.png"
+                    alt=""> <br>
+                <div class="implementacion border border-primary rounded-4 p-4 shadow-sm bg-light-subtle">
+                    <p><strong>Implementación de la practica:</strong></p>
+
+                    <div class="input-group mb-3">
+                        <input #inputMayuscula type="text" class="form-control "
+                            placeholder="Agregue texto en minuscula" aria-describedby="button-addon2">
+                        <button class="btn btn-outline-primary" (click)="setMensaje(inputMayuscula.value); inputMayuscula.value=''" type="button"
+                            id="button-addon2">Convertir</button>
+                    </div>
+
+                    <ul>
+                        <li *ngFor="let mensaje of mensajes">{{mensaje | uppercase}}</li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div
+                class="card card-hover text-secundary h-100 p-5 rounded-4 shadow border-0 d-flex flex-column justify-content-center">
+                <h5 class="text-primary">[Requerido]</h5>
+                <h2 class="text-left ">6) Mostrar Solo la Primera Palabra</h2>
+                <p><strong>Objetivo: </strong>Crea un pipe llamado firstWord que reciba un texto y devuelva solo la primera palabra.</p>
+                <img class="img-fluid" style="width: 300px;" src="assets/sextoejerciciocomunicaciondecomponentes.png"
+                    alt=""> <br>
+                <div class="implementacion border border-primary rounded-4 p-4 shadow-sm bg-light-subtle">
+                    <p><strong>Implementación de la practica:</strong></p>
+
+                    <div class="input-group mb-3">
+                        <input #inputPrimeraPalabra type="text" class="form-control "
+                            placeholder="Agregue un texto" aria-describedby="button-addon2">
+                        <button class="btn btn-outline-primary" (click)="primeraPalabra(inputPrimeraPalabra.value); inputPrimeraPalabra.value=''" type="button" id="button-addon2">Convertir</button>
+                    </div>
+
+                    <p><strong>{{palabra | primeraPalabra}}</strong></p>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div
+                class="card card-hover text-secundary h-100 p-5 rounded-4 shadow border-0 d-flex flex-column justify-content-center">
+                <h5 class="text-primary">[Requerido]</h5>
+                <h2 class="text-left ">7) Invertir Texto</h2>
+                <p><strong>Objetivo: </strong>Crea un pipe llamado reverseText que invierta el texto recibido.</p>
+                <img class="img-fluid" style="width: 300px;" src="assets/septimoejerciciocomunicaciondecomponentes.png"
+                    alt=""> <br>
+                <div class="implementacion border border-primary rounded-4 p-4 shadow-sm bg-light-subtle">
+                    <p><strong>Implementación de la practica:</strong></p>
+
+                    <div class="input-group mb-3">
+                        <input #inputReverseText type="text" class="form-control "
+                            placeholder="Agregue un texto" aria-describedby="button-addon2">
+                        <button class="btn btn-outline-primary" (click)="reversetext(inputReverseText.value)" type="button" id="button-addon2">Convertir</button>
+                    </div>
+
+                    <p><strong>{{text | reverseText}}</strong></p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

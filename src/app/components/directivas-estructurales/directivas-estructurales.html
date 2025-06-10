@@ -1,0 +1,155 @@
+<div class="position-relative text-center mb-5 bg-dark text-white pt-5 d-flex justify-content-center align-items-center"
+    style="min-height: 350px; overflow: hidden;">
+
+    <!-- Capa de fondo con imagen, opacidad y blur -->
+    <div style="
+    background-image: url('assets/banner4.png');
+    background-size: cover;
+    background-position: center;
+    filter: blur(4px);
+    opacity: 0.5;
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 0;">
+    </div>
+
+    <!-- Contenido (texto) sobre la imagen -->
+    <div style="position: relative; z-index: 1;">
+        <h1 class="display-4 fw-bold text-white" style="text-shadow: 2px 2px 6px rgba(0,0,0,0.8);">
+            Práctica #4: Directivas estructurales
+        </h1>
+        <p class="lead text-white" style="text-shadow: 1px 1px 4px rgba(0,0,0,0.7);">
+            Aprende a usar las Directivas estructurales.
+        </p>
+    </div>
+</div>
+
+
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <div
+                class="card card-hover text-secundary h-100 p-5 rounded-4 shadow border-0 d-flex flex-column justify-content-center">
+                <h5 class="text-primary">[Requerido]</h5>
+                <h2 class="text-left ">1) Mostrar un mensaje condicional con ngif</h2>
+                <p><strong>Objetivo: </strong>Usar <strong>ngif</strong> para mostrar u ocultar un mensaje basado en una variable
+                    booleana.</p>
+                <p>Crear un botón que alterne entre mostrar y ocultar un mensaje como <strong>¡Bienvenido al curso de Angular!</strong></p>
+                <p><strong>Define una variable isVisible</strong> en el componente, inicializada en false.</p>
+                <p>Usa ngif para mostrar el mensaje solo cuando <strong>isVisible</strong> sea true.</p>
+                <div class="implementacion border border-primary rounded-4 p-4 shadow-sm bg-light-subtle">
+                    <p><strong>Implementación de la practica:</strong></p>
+                    <a (click)="changeIsVisible()" class="btn btn-primary">Mostrar Mensaje</a>
+                    <div *ngIf="isVisible" class="alert alert-success mt-3" role="alert">
+                        <strong>¡Bienvenido al curso de Angular!</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-4">
+            <div
+                class="card card-hover text-secundary h-100 p-5 rounded-4 shadow border-0 d-flex flex-column justify-content-center">
+                <h5 class="text-primary">[Requerido]</h5>
+                <h2 class="text-left ">2) Renderizar una lista de elementos con ngfor</h2>
+                <p><strong>Objetivo: </strong>Usar <strong>ngfor</strong> para iterar y mostrar una lista de datos.</p>
+                <p><strong>Crea un componente que muestre una lista de frutas:</strong></p>
+                <p><strong>["Manzana", "Plátano", "Cereza", "Durazno", "Fresa"].</strong></p>
+                <p>Usa <strong>ngfor</strong> en el HTML para mostrar cada fruta en un li.</p>
+                <p>Agrega un botón que permita añadir una fruta nueva al final de la lista.</p>
+                <div class="implementacion border border-primary rounded-4 p-4 shadow-sm bg-light-subtle">
+                    <p><strong>Implementación de la practica:</strong></p>
+
+                    <div class="input-group mb-3">
+                        <input #inputFruta type="text" class="form-control " placeholder="Agregue una nueva fruta"
+                            aria-label="Recipient’s username" aria-describedby="button-addon2">
+                        <button class="btn btn-outline-primary" (click)="nuevaFruta(inputFruta.value); inputFruta.value=''" type="button" id="button-addon2">Agregar fruta</button>
+                    </div>
+                    <ul>
+                        <li *ngFor="let fruta of frutas">{{fruta}}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-4">
+            <div
+                class="card card-hover text-secundary h-100 p-5 rounded-4 shadow border-0 d-flex flex-column justify-content-center">
+                <h5 class="text-primary">[Requerido]</h5>
+                <h2 class="text-left ">3) Usar ngif con una condición anidada</h2>
+                <p><strong>Objetivo: </strong> Usar <strong>ngif</strong> con una condición lógica para mostrar un mensaje adecuado.</p>
+                <p><strong>Crea un componente que tenga una variable score (número) que represente la puntuación de un
+                        estudiante.</strong></p>
+                <ul>
+                    <li>Si el puntaje es mayor o igual a <strong>90</strong>, muestra <strong class="badge bg-success">¡Excelente!</strong>
+                    </li>
+                    <li>Si el puntaje está entre <strong>60</strong> y <strong>89</strong>, muestra <strong class="badge bg-warning">¡Aprobado!</strong></li>
+                    <li>Si es menor a <strong>60</strong>, muestra <strong class="badge bg-danger">¡Reprobado!</strong></li>
+                </ul>
+                <p><strong>Nota:</strong> Usa botones para cambiar dinámicamente el puntaje.</p>
+                <div class="implementacion border border-primary rounded-4 p-4 shadow-sm bg-light-subtle">
+                    <p><strong>Implementación de la practica:</strong></p>
+                    <div class="score-card">
+                        <div class="botones">
+                            <a (click)="setScore(95)" class="btn btn-success mx-3">95</a>
+                            <a (click)="setScore(75)" class="btn btn-warning mx-3">75</a>
+                            <a (click)="setScore(50)" class="btn btn-danger mx-3">50</a>
+                        </div>
+                        <br>
+                        <p><strong>Puntaje del Estudiante:</strong> {{ score }}</p>
+
+                        <div *ngIf="score >= 90">
+                            <h3 class="mb-3"><strong class="badge bg-success">¡Excelente! </strong>🥳</h3>
+                        </div>
+                        <div *ngIf="score >= 60 && score < 90">
+                            <h3 class="mb-3"><strong class="badge bg-warning">¡Aprobado! </strong>🙂</h3>
+                        </div>
+                        <div *ngIf="score < 60">
+                            <h3 class="mb-3"><strong class="badge bg-danger">¡Reprobado! </strong>😞</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-4">
+            <div
+                class="card card-hover text-secundary h-100 p-5 rounded-4 shadow border-0 d-flex flex-column justify-content-center">
+                <h5 class="text-primary">[Requerido]</h5>
+                <h2 class="text-left ">4) Tablas dinámicas con ngfor y directivas combinadas</h2>
+                <p><strong>Objetivo: </strong>Crear una tabla dinámica para visualizar una lista de usuarios.</p>
+                <p><strong>Define en el componente una lista de usuarios, donde cada usuario sea un objeto con
+                        propiedades:</strong> nombre, edad, estado.</p>
+                <p>Usa <strong>ngfor</strong> para iterar y mostrar cada usuario en una fila de una tabla.</p>
+                <p>Agrega una columna extra que muestre <strong class="badge bg-success">Activo</strong> o <strong
+                        class="badge bg-secondary">Inactivo</strong> según el valor de la propiedad activo, usando ngif.</p>
+                <div class="implementacion border border-primary rounded-4 p-4 shadow-sm bg-light-subtle">
+                    <p><strong>Implementación de la practica:</strong></p>
+                    <table class="table table-hover">
+                        <caption>Tabla de usuarios</caption>
+                        <thead class="table-dark">
+                            <tr>
+                                <th scope="col">Id</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Apellido</th>
+                                <th scope="col">Edad</th>
+                                <th scope="col">Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-group-divider">
+                            <tr *ngFor="let usuario of usuarios">
+                                <th scope="row">{{usuario.id}}</th>
+                                <td>{{usuario.nombre}}</td>
+                                <td>{{usuario.apellido}}</td>
+                                <td>{{usuario.edad}}</td>
+                                <td>
+                                    <span class="badge" [ngClass]="usuario.estado ? 'bg-success' : 'bg-secondary'">
+                                        {{ usuario.estado ? 'Activo' : 'Inactivo' }}
+                                    </span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
