@@ -22,13 +22,17 @@ export class Interpolacion {
   //ejercicio 3
   num1: number = 12;
   num2: number = 20;
+  num3: number = 8;
+  num4: number = 4;
   resta(): number{
     return this.num1-this.num2;
   }
 
-  //ejercicio 4
-  radius = 5;
+  multiplicacion(){
+    return this.num3*this.num4;
+  }
 
+  //ejercicio 4
   calculateArea(radius: number): number {
     return Math.PI * Math.pow(radius, 2);
   }
